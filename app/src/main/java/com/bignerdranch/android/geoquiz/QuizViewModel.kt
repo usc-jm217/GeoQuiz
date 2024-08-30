@@ -23,6 +23,7 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
     val currentQuestionAnswer: Boolean
         get() = questionBank[currentIndex].answer
 
+
     val currentQuestionText: Int
         get() = questionBank[currentIndex].textResId
 
