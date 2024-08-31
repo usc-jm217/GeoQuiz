@@ -1,10 +1,10 @@
 package com.bignerdranch.android.geoquiz
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
 const val CURRENT_INDEX_KEY = "CURRENT_INDEX_KEY"
+const val IS_CHEATER_KEY = "IS_CHEATER_KEY"
 
 class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel() {
 
@@ -23,6 +23,9 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
     val currentQuestionAnswer: Boolean
         get() = questionBank[currentIndex].answer
 
+    var isCheater: Boolean
+        get() = savedStateHandle.get(IS_CHEATER_KEY) ?: false
+        set(value) = savedStateHandle.set(IS_CHEATER_KEY, value)
 
     val currentQuestionText: Int
         get() = questionBank[currentIndex].textResId
