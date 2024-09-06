@@ -32,9 +32,11 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
 
     fun moveToNext() {
         currentIndex = (currentIndex + 1) % questionBank.size
+        isCheater = false
     }
 
     fun moveToPrev() {
-        currentIndex = (currentIndex - 1) % questionBank.size
+        currentIndex = (currentIndex - 1 + questionBank.size) % questionBank.size
+        isCheater = false
     }
 }
