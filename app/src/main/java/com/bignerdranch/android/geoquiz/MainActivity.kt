@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
             quizViewModel.isCheater =
                 result.data?.getBooleanExtra(EXTRA_ANSWER_SHOWN, false) ?: false
         }
+        updateQuestion()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

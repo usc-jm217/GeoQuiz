@@ -38,6 +38,7 @@ class CheatActivity : AppCompatActivity() {
             putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown)
         }
         setResult(Activity.RESULT_OK, data)
+        this.finish()
     }
     companion object {
         fun newIntent(packageContext: Context, answerIsTrue: Boolean): Intent {
